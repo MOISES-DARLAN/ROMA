@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>Panificadora Roma - Produtos e Carrinho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+    <header class="bg-red-800 text-white px-4 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-3 flex flex-wrap justify-between items-center">
+            <h1 class="text-3xl sm:text-4xl font-bold">Panificadora Roma</h1>
+            <nav class="flex items-center mt-4 sm:mt-0">
+                <a href="/index.html" class="mx-2 hover:text-yellow-300">Home</a>
+                <a href="#" class="mx-2 hover:text-yellow-300">Produtos</a>
+                <a href="/index.html/#sobre" class="mx-2 hover:text-yellow-300">Sobre</a>
+                <a href="/index.html/#contato" class="mx-2 hover:text-yellow-300">Contato</a>
+                <div id="cart-icon" class="ml-3 relative">
+                    <i class="fas fa-shopping-cart text-2xl cursor-pointer"></i>
+                    <span id="cart-count" class="bg-yellow-500 text-red-800 rounded-full px-2 py-1 text-xs font-bold absolute -top-2 -right-2">0</span>
+                    <div id="cart-dropdown" class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl p-4">
+                        <h3 class="text-red-800 font-bold mb-2">Seu Carrinho</h3
+                          <ul id="cart-items" class="text-gray-700"></ul>
+                          <div class="border-t pt-2 mt-2">
+                              <p class="font-bold text-red-800">Total: R$ <span id="cart-total">0.00</span></p>
+                          </div>
+                          <button id="checkout-btn" class="mt-4 bg-red-800 text-white px-4 py-2 rounded-full w-full hover:bg-red-700 transition duration-300">Finalizar Compra</button>
+                      </div>
+                  </div>
+              </nav>
+          </div>
+      </header>
+  
+      <main class="container mx-auto px-4 py-8">
+          <h2 class="text-3xl font-bold text-center text-red-800 mb-8">Nossos Produtos</h2>
+  
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="products">
+              <!-- Loading Card 1 -->
+              <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg animate-pulse">
+                  <div class="bg-gray-300 w-full h-40"></div>
+                  <div class="p-4">
+                      <div class="bg-gray-300 h-6 w-3/4 mb-2"></div>
+                      <div class="bg-gray-300 h-4 w-full mb-4"></div>
+                      <div class="bg-gray-300 h-4 w-1/2"></div>
+                  </div>
+              </div>
+  
+              <!-- Loading Card 2 -->
+              <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg animate-pulse">
+                  <div class="bg-gray-300 w-full h-48"></div>
+                  <div class="p-4">
+                      <div class="bg-gray-300 h-6 w-3/4 mb-2"></div>
+                      <div class="bg-gray-300 h-4 w-full mb-4"></div>
+                      <div class="bg-gray-300 h-4 w-1/2"></div>
+                  </div>
+              </div>
+  
+              <!-- Loading Card 3 -->
+              <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg animate-pulse">
+                  <div class="bg-gray-300 w-full h-48"></div>
+                  <div class="p-4">
+                      <div class="bg-gray-300 h-6 w-3/4 mb-2"></div>
+                      <div class="bg-gray-300 h-4 w-full mb-4"></div>
+                      <div class="bg-gray-300 h-4 w-1/2"></div>
+                  </div>
+              </div>
+
+              <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg animate-pulse">
+                <div class="bg-gray-300 w-full h-48"></div>
+                <div class="p-4">
+                    <div class="bg-gray-300 h-6 w-3/4 mb-2"></div>
+                    <div class="bg-gray-300 h-4 w-full mb-4"></div>
+                    <div class="bg-gray-300 h-4 w-1/2"></div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg animate-pulse">
+              <div class="bg-gray-300 w-full h-48"></div>
+              <div class="p-4">
+                  <div class="bg-gray-300 h-6 w-3/4 mb-2"></div>
+                  <div class="bg-gray-300 h-4 w-full mb-4"></div>
+                  <div class="bg-gray-300 h-4 w-1/2"></div>
+              </div>
+          </div>
+
+          <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg animate-pulse">
+            <div class="bg-gray-300 w-full h-48"></div>
+            <div class="p-4">
+                <div class="bg-gray-300 h-6 w-3/4 mb-2"></div>
+                <div class="bg-gray-300 h-4 w-full mb-4"></div>
+                <div class="bg-gray-300 h-4 w-1/2"></div>
+            </div>
+        </div>
+          </div>
+      </main>
+  
+      <div id="checkout-modal" class="modal">
+          <div class="modal-content bg-white rounded-lg p-6">
+              <h2 class="text-2xl font-bold text-red-800 mb-4">Finalizar Pedido</h2>
+              <form id="checkout-form">
+                  <div class="mb-4">
+                      <label class="block text-gray-700 text-sm font-bold mb-2">
+                          <input type="radio" name="delivery-option" value="local" checked> Retirar no local
+                      </label>
+                      <label class="block text-gray-700 text-sm font-bold mb-2">
+                          <input type="radio" name="delivery-option" value="delivery"> Receber em casa
+                      </label>
+                  </div>
+                  <div id="address-field" class="mb-4 hidden">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+                          Endereço de entrega:
+                      </label>
+                      <textarea id="address" name="address" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                  </div>
+                  <div class="flex items-center justify-between">
+                      <button type="submit" class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                          Confirmar Pedido
+                      </button>
+                      <button type="button" id="close-modal" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                          Cancelar
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  
+      <footer class="bg-red-800 text-white py-4 mt-8">
+          <div class="container mx-auto px-4 text-center">
+              <p>&copy; 2024 Panificadora Roma. Todos os direitos reservados.</p>
+          </div>
+      </footer>
+  
+      <script src="/js/e-commerce.js"></script>
+  </body>
+  </html>
+  

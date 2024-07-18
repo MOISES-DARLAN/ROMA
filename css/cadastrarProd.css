@@ -1,0 +1,20 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFF8E1;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .btn-primary {
+    background-color: #8B0000;
+    color: #FFFFFF;
+  }
+
+  .btn-primary:hover {
+    background-color: #7B0000;
+  }
